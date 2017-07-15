@@ -12,6 +12,7 @@ let calculateAmortization = (principal, years, rate) => {
     let {monthlyRate, monthlyPayment} = calculateMonthlyPayment(principal, years, rate);
     let balance = principal;
     let amortization = [];
+    let numberYear = 0;
     
 	for (let y=0; y < years; y++) {
         let interestY = 0;  //Interest payment for year y
@@ -25,7 +26,8 @@ let calculateAmortization = (principal, years, rate) => {
             principalY = principalY + principalM;
             balance = balance - principalM;
         }
-        amortization.push({principalY, interestY, balance});
+		numberYear++;
+        amortization.push({principalY, interestY, balance, numberYear});
     }
     
 	return {monthlyPayment, monthlyRate, amortization};

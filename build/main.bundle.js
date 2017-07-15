@@ -17,6 +17,7 @@ var calculateAmortization = function calculateAmortization(principal, years, rat
 
     var balance = principal;
     var amortization = [];
+    var numerYear = 0;
 
     for (var y = 0; y < years; y++) {
         var interestY = 0; //Interest payment for year y
@@ -30,7 +31,8 @@ var calculateAmortization = function calculateAmortization(principal, years, rat
             principalY = principalY + principalM;
             balance = balance - principalM;
         }
-        amortization.push({ principalY: principalY, interestY: interestY, balance: balance });
+        numerYear++;
+        amortization.push({ principalY: principalY, interestY: interestY, balance: balance, numerYear: numerYear });
     }
 
     return { monthlyPayment: monthlyPayment, monthlyRate: monthlyRate, amortization: amortization };
