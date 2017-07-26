@@ -2,12 +2,15 @@
  var webpack = require('webpack');
 
  module.exports = {
-     entry: './js/main.js',
-     output: {
+    entry:  {
+        app: './js/main.js',
+        ratefinder: './js/ratefinder.js'
+    },
+    output: {
          path: path.resolve(__dirname, 'build'),
-         filename: 'main.bundle.js'
-     },
-     module: {
+         filename: '[name].bundle.js'
+    },
+    module: {
          loaders: [
              {
                  test: /\.js$/,
@@ -17,9 +20,9 @@
                  }
              }
          ]
-     },
-     stats: {
+    },
+    stats: {
          colors: true
-     },
-     devtool: 'source-map'
- };
+    },
+    devtool: 'source-map'
+};

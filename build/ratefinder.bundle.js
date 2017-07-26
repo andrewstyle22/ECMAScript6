@@ -87,4 +87,4 @@ fetch(url).then(function (response) {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.bundle.js.map
+//# sourceMappingURL=ratefinder.bundle.js.map
